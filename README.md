@@ -44,26 +44,23 @@ Your markdown file can look like this:
 And the script will generate:
 
 ```md
+# 📓 Max - Norman’s Journal
+
+---
+
 ## 📚 Table of Contents
 
-- [🗂️ 2025 - The Year Things Actually Happened™](#2025---the-year-things-actually-happened)
-  - [📖 Chapter 03 - The Princesa Arc](#chapter-03---the-princesa-arc)
-    - [🗓️ Aug 30, 2025 - Meeting Petrova](#aug-30-2025---meeting-petrova)
-      - [⏰ 09:25 — Getting the Ride](#0925--getting-the-ride)
+[🗂️ 2025 - The Year Things Actually Happened™](#2025---the-year-things-actually-happened)
+- [📖 Chapter 03 - The Princesa Arc](#chapter-03---the-princesa-arc)
+  - [🗓️ Aug 30, 2025 - Meeting Petrova](#aug-30-2025---meeting-petrova)
+    - [⏰ 09:25 — Getting the Ride](#0925--getting-the-ride)
 ```
 
 ---
 
 ## 🚀 Installation
 
-Clone the repository:
-
-```bash
-git clone https://github.com/your-username/max-toc-generator.git
-cd max-toc-generator
-```
-
-No external dependencies required — just Python 3.
+No external dependencies required, just Python 3.
 
 ---
 
@@ -72,13 +69,13 @@ No external dependencies required — just Python 3.
 Edit the script and set your file path:
 
 ```python
-file_path = "your_diary.md"
+file_path = "C:\Users\norma\Projects\repository\your_diary.md"
 ```
 
 Then run:
 
 ```bash
-python main.py
+python "Diary Table of Content Creator.py"
 ```
 
 ---
