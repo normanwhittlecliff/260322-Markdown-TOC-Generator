@@ -1,29 +1,29 @@
-# 📓 TOC Generator for Markdown Files
+# TOC Generator for Markdown Files
 
 A simple Python tool that automatically generates and maintains a **Table of Contents (TOC)** for my personal markdown diary, inspired by structured journaling systems with Years, Chapters, Entries, and Subentries.
 
 ---
 
-## ✨ Features
+## Features
 
-* 🔍 Scans markdown files for headings:
+* Scans markdown files for headings:
 
   * `#` → Year
   * `##` → Chapter
   * `###` → Entry
   * `####` → Sub Entry
 
-* 🧠 Builds a hierarchical, clickable Table of Contents
+* Builds a hierarchical, clickable Table of Contents
 
-* 🧹 Removes existing TOC before generating a new one
+* Removes existing TOC before generating a new one
 
-* 📍 Automatically inserts TOC after the first `---` separator
+* Automatically inserts TOC after the first `---` separator
 
-* 🎯 Fully customizable parsing logic (no regex required)
+* Fully customizable parsing logic (no regex required)
 
 ---
 
-## 📂 Example Structure
+## Example Structure
 
 Your markdown file can look like this:
 
@@ -58,13 +58,13 @@ And the script will generate:
 
 ---
 
-## 🚀 Installation
+## Installation
 
 No external dependencies required, just Python 3.
 
 ---
 
-## 🧪 Usage
+## Usage
 
 Edit the script and set your file path:
 
@@ -81,7 +81,7 @@ python "Diary Table of Content Creator.py"
 Then add the file's path.
 ---
 
-## 🎨 Customization
+## Customization
 
 You can easily redefine your structure:
 
@@ -102,13 +102,13 @@ You can also:
 
 ---
 
-## 📜 License
+## License
 
 This project is open-source and free to use.
 
 ---
 
-## 👤 Author
+## Author
 
 **Norman Whittlecliff (Norman Santos)**
 
