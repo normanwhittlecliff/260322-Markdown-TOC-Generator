@@ -4,6 +4,15 @@ A simple Python tool that automatically generates and maintains a **Table of Con
 
 ---
 
+## Information
+- **Project ID**: 260322
+- **Creator**: Norman Santos (normanwhittlecliff)
+- **Date of Creation**: March 22, 2026
+- **Language**: Python
+- **Change Log**: CHANGELOG.md
+
+---
+
 ## Features
 
 * Scans markdown files for headings:
