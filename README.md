@@ -78,43 +78,7 @@ Then run:
 python "Diary Table of Content Creator.py"
 ```
 
----
-
-## 🔁 Recommended Workflow
-
-Always rebuild your TOC like this:
-
-```python
-remove_existing_toc(file_path)
-insert_toc(file_path)
-```
-
-Or use:
-
-```python
-rebuild_toc(file_path)
-```
-
----
-
-## 🧩 Core Functions
-
-### `extract_headings(lines)`
-
-Reads the file and extracts headings using simple `if/elif` logic.
-
-### `generate_toc(headings)`
-
-Creates the markdown TOC with proper indentation and anchor links.
-
-### `insert_toc(file_path)`
-
-Inserts the TOC after the first `---`.
-
-### `remove_existing_toc(file_path)`
-
-Deletes any previously generated TOC.
-
+Then add the file's path.
 ---
 
 ## 🎨 Customization
