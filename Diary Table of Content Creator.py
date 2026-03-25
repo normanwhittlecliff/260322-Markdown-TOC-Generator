@@ -4,13 +4,12 @@ import re
 
 showSubEntries = False;
 debugMode = True;
-linesCount = 0
+clickableTOC = True;
+linesCount = 0;
 
 def debugPrint(text):
     if debugMode:
         print(text)
-        
-        
 
 def slugify(text):
     """Convert heading text into a markdown anchor link."""
@@ -63,17 +62,23 @@ def generate_toc(headings):
     toc_lines.append("## 📚 Table of Contents\n\n")
 
     for level, text in headings:
-        anchor = slugify(text)
+        sectionTitle = text + "\n\n"
+        if clickableTOC:
+            anchor = slugify(text)
+            sectionTitle = f"[{text}](#{anchor})\n\n"
+        
         if (level == 0):
-            toc_lines.append(f"[{text}](#{anchor})\n\n")
-            debugPrint(f"[{text}](#{anchor})\n\n")
+            toc_lines.append(sectionTitle)
+            debugPrint(sectionTitle)
             continue;
         indent = "  " * (level - 1)
-        toc_lines.append(f"{indent}- [{text}](#{anchor})\n\n")
-        debugPrint(f"{indent}- [{text}](#{anchor})\n\n")
+        toc_lines.append(f"{indent}- {sectionTitle}")
+        debugPrint(f"{indent}- {sectionTitle}")
         # toc_lines.append(f"[{text}](#{anchor})\n\n")
 
     toc_lines.append("\n\n---\n\n")
+    global linesCount
+    linesCount = len(headings)
     return toc_lines
 
 
@@ -105,7 +110,7 @@ def insert_toc(filePath):
     with open(filePath, 'w', encoding='utf-8') as f:
         f.writelines(new_lines)
 
-    print("✅ Table of Contents inserted successfully!")
+    print(f"✅ Table of Contents inserted successfully! A total of {linesCount} lines were added!")
     
 def remove_existing_toc(filePath):
     with open(filePath, 'r', encoding='utf-8') as f:
@@ -148,7 +153,7 @@ def remove_existing_toc(filePath):
         return
 
     # Step 4: Remove TOC block
-    new_lines = lines[:first_sep + 1] + ["\n"] + lines[toc_end + 1:]
+    new_lines = lines[:first_sep + 1] + ["\n"] + lines[toc_end + 3:]
 
     # Step 5: Write file back
     with open(filePath, 'w', encoding='utf-8') as f:

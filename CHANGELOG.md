@@ -7,6 +7,18 @@ and this project follows Semantic Versioning.
 
 ---
 
+# # [1.0.2] - 2026-03-25
+
+### Created
+
+- New config boolean: clickableTOC
+
+### Changed
+
+- Change the `generate_toc(headings)` function, so clickable titles can be disabled.
+
+---
+
 # # [1.0.1] - 2026-03-24
 
 
