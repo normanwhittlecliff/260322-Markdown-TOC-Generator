@@ -1,34 +1,44 @@
-# 📓 TOC Generator for Markdown Files
+# TOC Generator for Markdown Files
 
 A simple Python tool that automatically generates and maintains a **Table of Contents (TOC)** for my personal markdown diary, inspired by structured journaling systems with Years, Chapters, Entries, and Subentries.
 
 ---
 
-## ✨ Features
+## Information
+- **Project ID**: 260322
+- **Title**: TOC Generator for Markdown Files
+- **Creator**: Norman Santos (normanwhittlecliff)
+- **Date of Creation**: March 22, 2026
+- **Language**: Python
+- **Change Log**: [CHANGELOG.md](https://github.com/normanwhittlecliff/260322-Markdown-TOC-Generator/blob/main/CHANGELOG.md)
 
-* 🔍 Scans markdown files for headings:
+---
+
+## Features
+
+* Scans markdown files for headings:
 
   * `#` → Year
   * `##` → Chapter
   * `###` → Entry
   * `####` → Sub Entry
 
-* 🧠 Builds a hierarchical, clickable Table of Contents
+* Builds a hierarchical, clickable Table of Contents
 
-* 🧹 Removes existing TOC before generating a new one
+* Removes existing TOC before generating a new one
 
-* 📍 Automatically inserts TOC after the first `---` separator
+* Automatically inserts TOC after the first `---` separator
 
-* 🎯 Fully customizable parsing logic (no regex required)
+* Fully customizable parsing logic (no regex required)
 
 ---
 
-## 📂 Example Structure
+## Example Structure
 
 Your markdown file can look like this:
 
 ```md
-# 📓 Max - Norman’s Journal
+# Max - Norman’s Journal
 
 ---
 
@@ -54,20 +64,13 @@ And the script will generate:
 
 ---
 
-## 🚀 Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/your-username/max-toc-generator.git
-cd max-toc-generator
-```
+## Installation
 
 No external dependencies required — just Python 3.
 
 ---
 
-## 🧪 Usage
+## Usage
 
 Edit the script and set your file path:
 
@@ -80,64 +83,6 @@ Then run:
 ```bash
 python main.py
 ```
-
----
-
-## 🔁 Recommended Workflow
-
-Always rebuild your TOC like this:
-
-```python
-remove_existing_toc(file_path)
-insert_toc(file_path)
-```
-
-Or use:
-
-```python
-rebuild_toc(file_path)
-```
-
----
-
-## 🧩 Core Functions
-
-### `extract_headings(lines)`
-
-Reads the file and extracts headings using simple `if/elif` logic.
-
-### `generate_toc(headings)`
-
-Creates the markdown TOC with proper indentation and anchor links.
-
-### `insert_toc(file_path)`
-
-Inserts the TOC after the first `---`.
-
-### `remove_existing_toc(file_path)`
-
-Deletes any previously generated TOC.
-
----
-
-## 🎨 Customization
-
-You can easily redefine your structure:
-
-```python
-if stripped.startswith("# "):
-    headings.append(("YEAR", text))
-
-elif stripped.startswith("## "):
-    headings.append(("CHAPTER", text))
-```
-
-You can also:
-
-* Ignore template sections
-* Add filters
-* Rename levels
-* Modify formatting
 
 ---
 
