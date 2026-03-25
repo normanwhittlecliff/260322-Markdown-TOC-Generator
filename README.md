@@ -1,38 +1,29 @@
-# TOC Generator for Markdown Files
+# 📓 TOC Generator for Markdown Files
 
 A simple Python tool that automatically generates and maintains a **Table of Contents (TOC)** for my personal markdown diary, inspired by structured journaling systems with Years, Chapters, Entries, and Subentries.
 
 ---
 
-## Information
-- **Project ID**: 260322
-- **Creator**: Norman Santos (normanwhittlecliff)
-- **Date of Creation**: March 22, 2026
-- **Language**: Python
-- **Change Log**: CHANGELOG.md
+## ✨ Features
 
----
-
-## Features
-
-* Scans markdown files for headings:
+* 🔍 Scans markdown files for headings:
 
   * `#` → Year
   * `##` → Chapter
   * `###` → Entry
   * `####` → Sub Entry
 
-* Builds a hierarchical, clickable Table of Contents
+* 🧠 Builds a hierarchical, clickable Table of Contents
 
-* Removes existing TOC before generating a new one
+* 🧹 Removes existing TOC before generating a new one
 
-* Automatically inserts TOC after the first `---` separator
+* 📍 Automatically inserts TOC after the first `---` separator
 
-* Fully customizable parsing logic (no regex required)
+* 🎯 Fully customizable parsing logic (no regex required)
 
 ---
 
-## Example Structure
+## 📂 Example Structure
 
 Your markdown file can look like this:
 
@@ -53,44 +44,83 @@ Your markdown file can look like this:
 And the script will generate:
 
 ```md
-# 📓 Max - Norman’s Journal
-
----
-
 ## 📚 Table of Contents
 
-[🗂️ 2025 - The Year Things Actually Happened™](#2025---the-year-things-actually-happened)
-- [📖 Chapter 03 - The Princesa Arc](#chapter-03---the-princesa-arc)
-  - [🗓️ Aug 30, 2025 - Meeting Petrova](#aug-30-2025---meeting-petrova)
-    - [⏰ 09:25 — Getting the Ride](#0925--getting-the-ride)
+- [🗂️ 2025 - The Year Things Actually Happened™](#2025---the-year-things-actually-happened)
+  - [📖 Chapter 03 - The Princesa Arc](#chapter-03---the-princesa-arc)
+    - [🗓️ Aug 30, 2025 - Meeting Petrova](#aug-30-2025---meeting-petrova)
+      - [⏰ 09:25 — Getting the Ride](#0925--getting-the-ride)
 ```
 
 ---
 
-## Installation
+## 🚀 Installation
 
-No external dependencies required, just Python 3.
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/max-toc-generator.git
+cd max-toc-generator
+```
+
+No external dependencies required — just Python 3.
 
 ---
 
-## Usage
+## 🧪 Usage
 
 Edit the script and set your file path:
 
 ```python
-file_path = "C:\Users\norma\Projects\repository\your_diary.md"
+file_path = "your_diary.md"
 ```
 
 Then run:
 
 ```bash
-python "Diary Table of Content Creator.py"
+python main.py
 ```
 
-Then add the file's path.
 ---
 
-## Customization
+## 🔁 Recommended Workflow
+
+Always rebuild your TOC like this:
+
+```python
+remove_existing_toc(file_path)
+insert_toc(file_path)
+```
+
+Or use:
+
+```python
+rebuild_toc(file_path)
+```
+
+---
+
+## 🧩 Core Functions
+
+### `extract_headings(lines)`
+
+Reads the file and extracts headings using simple `if/elif` logic.
+
+### `generate_toc(headings)`
+
+Creates the markdown TOC with proper indentation and anchor links.
+
+### `insert_toc(file_path)`
+
+Inserts the TOC after the first `---`.
+
+### `remove_existing_toc(file_path)`
+
+Deletes any previously generated TOC.
+
+---
+
+## 🎨 Customization
 
 You can easily redefine your structure:
 
@@ -111,13 +141,13 @@ You can also:
 
 ---
 
-## License
+## 📜 License
 
 This project is open-source and free to use.
 
 ---
 
-## Author
+## 👤 Author
 
 **Norman Whittlecliff (Norman Santos)**
 

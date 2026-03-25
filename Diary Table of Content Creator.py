@@ -3,7 +3,14 @@ import re
 # OPTIONS
 
 showSubEntries = False;
+debugMode = True;
+linesCount = 0
 
+def debugPrint(text):
+    if debugMode:
+        print(text)
+        
+        
 
 def slugify(text):
     """Convert heading text into a markdown anchor link."""
@@ -28,12 +35,15 @@ def extract_headings(lines):
             separator_count += 1
             continue
 
-        if separator_count < 2:
+        if separator_count < 1:
             continue  # skip template section
 
         stripped = line.strip()
         
         # headings.append((1, stripped[2:]))
+        
+        if stripped.startswith("#"):
+            debugPrint(stripped)
 
         if stripped.startswith("# "):
             headings.append((0, stripped[1:]))
@@ -56,9 +66,11 @@ def generate_toc(headings):
         anchor = slugify(text)
         if (level == 0):
             toc_lines.append(f"[{text}](#{anchor})\n\n")
+            debugPrint(f"[{text}](#{anchor})\n\n")
             continue;
         indent = "  " * (level - 1)
         toc_lines.append(f"{indent}- [{text}](#{anchor})\n\n")
+        debugPrint(f"{indent}- [{text}](#{anchor})\n\n")
         # toc_lines.append(f"[{text}](#{anchor})\n\n")
 
     toc_lines.append("\n\n---\n\n")
